@@ -83,6 +83,10 @@ http://ionicframework.com/docs/theming/ */
    */
 
   body {
+    background-image: url('https://e1.pxfuel.com/desktop-wallpaper/225/444/desktop-wallpaper-golf-ball-backgrounds-golf-ball-thumbnail.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
@@ -233,4 +237,4 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-card-background: #1e1e1e;
   }
-}
+  }

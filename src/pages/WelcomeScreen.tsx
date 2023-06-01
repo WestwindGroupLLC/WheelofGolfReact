@@ -6,7 +6,7 @@ const WelcomeScreen: React.FC = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowWelcome(false);
+      setShowWelcome(true);
     }, 5000);
     return () => {
       clearTimeout(timer);

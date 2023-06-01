@@ -1,7 +1,16 @@
 import React from 'react';
-import './AccountPage.css'; // Import the CSS file for the component
+import './Account.css'; // Import the CSS file for the component
+import { Redirect } from 'react-router';
 
 const AccountPage = () => {
+  const isAuthenticated = true; // Replace with your authentication logic
+
+  if (!isAuthenticated) {
+    // Redirect to login page if user is not authenticated
+    return <Redirect to="/Authpage" />;
+  }
+  
+   
   const avatarUrl = 'https://example.com/avatar.jpg'; // Replace with the actual URL of the user's avatar
   const username = 'JohnDoe'; // Replace with the actual username
 

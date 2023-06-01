@@ -1,0 +1,232 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  
+  .App {
+    background-image: url("https://e1.pxfuel.com/desktop-wallpaper/225/444/desktop-wallpaper-golf-ball-backgrounds-golf-ball-thumbnail.jpg");
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .spinning_wheel {
+    border: 1px solid black;  
+    background-color: azure;
+    opacity: 65%;
+    position: relative;
+    top: 6%;
+    border-radius: 50%; 
+    width: 80%;
+    height: 45%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    overflow: hidden;
+  }
+  
+  .spinning_wheel > div:nth-child(1) {
+    position: absolute;
+    left: 41%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  .spinning_wheel > div:nth-child(2) {
+    position: absolute;
+    left: 64.3%;
+    top: 8%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  .spinning_wheel > div:nth-child(3) {
+    position: absolute;
+    left: 79.7%;
+    top: 25.4%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  .spinning_wheel > div:nth-child(4) {
+    position: absolute;
+    left: 84.7%;
+    top: 47.3%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  .spinning_wheel > div:nth-child(5) {
+    position: absolute;
+    left: 79%;
+    top: 69%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  .spinning_wheel > div:nth-child(6) {
+    position: absolute;
+    left: 63%;
+    top: 85%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  .spinning_wheel > div:nth-child(7) {
+    position: absolute;
+    left: 41%;
+    top: 91%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  .spinning_wheel > div:nth-child(8) {
+    position: absolute;
+    left: 19.7%;
+    top: 85.6%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  .spinning_wheel > div:nth-child(9) {
+    position: absolute;
+    left: 3%;
+    top: 71%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  .spinning_wheel > div:nth-child(10) {
+    position: absolute;
+    left: -5%;
+    top: 49%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  .spinning_wheel > div:nth-child(11) {
+    position: absolute;
+    left: .05%;
+    top: 26%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  .spinning_wheel > div:nth-child(12) {
+    position: absolute;
+    left: 16%;
+    top: 7%;
+    font-size: 20px;
+    width: 60px;
+    
+  }
+  
+  :root {
+    --random-rotation: 0deg;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(var(--random-rotation));
+    }
+  }
+  
+  
+  .selection_club_list {
+   border: 1px solid red;
+   width: 40vw;
+   height: 37vh;
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+   left: 5%;
+   bottom: 2%;
+   overflow-y: scroll;
+  }
+  
+  
+  .selection_challenage_list {
+   background-color: white;
+   color: white;
+   opacity: 80%;
+   background: linear-gradient(to top, black, transparent);
+   width: 100vw;
+   height: 35vh;
+   position: absolute;
+   bottom: 0%;
+   overflow-y: scroll;
+  }
+  
+  .list {
+    border: 1px solid black;
+    height: 4%;
+    overflow: hidden;
+    position: absolute;
+    top: 49%;
+  }
+  
+  .list hr {
+    visibility: hidden;
+  }
+  
+  .club_button {
+    position: absolute;
+    top: 56%;
+    left: 10%; 
+  }
+  
+  .special_button {
+    position: absolute;
+    top: 56%;
+    right: 10%;
+  }
+  
+  button {
+    background: linear-gradient(to bottom, silver, transparent);
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    position: absolute;
+    top: -11%;
+    rotate: 180deg;
+    font-size: 70px;
+  }
+  
+  img {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+  }

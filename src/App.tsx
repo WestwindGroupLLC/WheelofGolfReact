@@ -13,7 +13,8 @@ import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import WelcomeScreen from './pages/WelcomeScreen';
 import AuthPage from './pages/AuthPage';
-
+import WheelGamesPage from './pages/WheelGames';
+import AccountPage from './pages/Account';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -33,8 +34,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import WheelGamesPage from './pages/WheelGames';
-import AccountPage from './pages/Account';
+
 
 setupIonicReact();
 

@@ -1,18 +1,20 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import React, { useState, useEffect} from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner } from '@ionic/react';
+import React, { useState, useEffect } from 'react';
 
 const WelcomeScreen: React.FC = () => {
-  const [showWelcome, setShowWelcome] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowWelcome(true);
-    }, 5000);
+      setLoading(false);
+    }, 4000); // Adjust the duration as needed
+
     return () => {
       clearTimeout(timer);
     };
   }, []);
 
+  if (loading) {
     return (
       <IonPage>
         <IonHeader>
@@ -22,9 +24,13 @@ const WelcomeScreen: React.FC = () => {
         </IonHeader>
         <IonContent>
           <p>Put a brief introduction or any other relevant information here.</p>
+          <IonSpinner color="primary" />
         </IonContent>
       </IonPage>
     );
-  };
-  export default WelcomeScreen;
-  
+  }
+
+  return null; // Return null when loading is false to hide the welcome screen
+};
+
+export default WelcomeScreen;

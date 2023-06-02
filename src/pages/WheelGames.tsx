@@ -4,7 +4,8 @@ import './WheelGamesPage.css'; //Import the CSS file for the component
 const WheelGamesPage = () => {
   const clubArray = ["Driver", "3Wood", "5Wood", "Hybrid", "3-Iron", "4-Iron", "5-Iron", "6-Iron", "7-Iron", "8-Iron", "9-Iron", "Putter"];
   const specialArray = ["1) Miss the Green in regulation loose your driver", "2) Group picks your clubs for the hole", "3) Loose the hole, owe everyone a round", "4) If drink cart comes by you by the round", "5) Cannot use your putter", "6) Must swing once opposite handed", "7) Hit from the farthest tee", "8) Hit the green in regulation everyone owes you a drink", "9) Only use fairway woods entire hole", "10) Only use one iron entire hole", "11) Choose your partners club once"];
-  const selectedArray = useRef<string[] | null>(null);
+  const selectedArray = useRef<string[] | string[]>([]); // Update the type to allow string[] or string
+
   const circleRef = useRef<HTMLDivElement | null>(null);
 
   const randomRotation = () => {
@@ -35,18 +36,23 @@ const WheelGamesPage = () => {
     console.log(array);
     const circleItems = [...(circleRef.current?.children || [])];
     const angle = 360 / array.length;
-
-    circleItems.forEach((item: HTMLElement, index: number) => {
-      const rotateValue = angle * index;
-      item.style.transform = `rotate(${rotateValue}deg)`;
+  
+    circleItems.forEach((item: Element, index: number) => {
+      if (item instanceof HTMLElement) {
+        const rotateValue = angle * index;
+        item.style.transform = `rotate(${rotateValue}deg)`;
+        item.textContent = array[index]; // Set the text content of the circle item
+      }
     });
-
+  
     selectedArray.current = array;
     randomRotation();
     setTimeout(() => {
       resetAnimation();
     }, 8000);
   };
+  
+  
 
   const specialList = specialArray.map((special, index) => (
     <div key={index}>
@@ -65,15 +71,16 @@ const WheelGamesPage = () => {
       </div>
       <h1>⏏</h1>
       <div className="spinning_wheel" ref={circleRef}>
-        {selectedArray.current ? (
-          selectedArray.current.map((item, index) => (
-            <div className="circle-item" key={index}>
-              {item}
-            </div>
-          ))
-        ) : (
-          <h3>Golf Gambler</h3>
-        )}
+      {selectedArray.current && selectedArray.current.length > 0 ? (
+  selectedArray.current.map((item, index) => (
+    <div className="circle-item" key={index}>
+      {item}
+    </div>
+  ))
+) : (
+  <div className="circle-item">Golf Gambler</div>
+)}
+
       </div>
       <div className="selection_challenge_list">
         <h3>Challenges</h3>

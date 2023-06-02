@@ -1,33 +1,37 @@
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-  
-  .App {
-    background-image: url("https://e1.pxfuel.com/desktop-wallpaper/225/444/desktop-wallpaper-golf-ball-backgrounds-golf-ball-thumbnail.jpg");
-    background-size: cover;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-  }
-  
-  .spinning_wheel {
-    border: 1px solid black;  
-    background-color: azure;
-    opacity: 65%;
-    position: relative;
-    top: 6%;
-    border-radius: 50%; 
-    width: 80%;
-    height: 45%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    overflow: hidden;
-  }
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.wheel-games-container {
+  background-image: url("https://e1.pxfuel.com/desktop-wallpaper/225/444/desktop-wallpaper-golf-ball-backgrounds-golf-ball-thumbnail.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.spinning_wheel {
+  white-space: nowrap;
+  border: 1px solid black;
+  background-color: azure;
+  opacity: 65%;
+  position: relative;
+  top: 6%;
+  border-radius: 50%;
+  width: 80%;
+  height: 0;
+  padding-bottom: 80%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  overflow: hidden;
+}
   
   .spinning_wheel > div:nth-child(1) {
     position: absolute;
@@ -148,48 +152,48 @@ body {
     }
   }
   
-  
   .selection_club_list {
-   border: 1px solid red;
-   width: 40vw;
-   height: 37vh;
-   display: flex;
-   flex-direction: column;
-   position: absolute;
-   left: 5%;
-   bottom: 2%;
-   overflow-y: scroll;
+    border: 1px solid red;
+    width: 40vw;
+    height: 37vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 5%;
+    bottom: 2%;
+    overflow-y: scroll;
   }
   
-  
-  .selection_challenage_list {
-   background-color: white;
-   color: white;
-   opacity: 80%;
-   background: linear-gradient(to top, black, transparent);
-   width: 100vw;
-   height: 35vh;
-   position: absolute;
-   bottom: 0%;
-   overflow-y: scroll;
+  .selection_challenge_list {
+    background-color: white;
+    color: white;
+    opacity: 80%;
+    background: linear-gradient(to top, black, transparent);
+    width: 100vw;
+    height: 35vh;
+    position: absolute;
+    bottom: 0%;
+    overflow-y: scroll;
   }
   
-  .list {
+  .selection_club_list .list,
+  .selection_challenge_list .list {
     border: 1px solid black;
     height: 4%;
     overflow: hidden;
-    position: absolute;
-    top: 49%;
+    position: relative;
+    margin-bottom: 2px;
   }
   
-  .list hr {
+  .selection_club_list .list hr,
+  .selection_challenge_list .list hr {
     visibility: hidden;
   }
   
   .club_button {
     position: absolute;
     top: 56%;
-    left: 10%; 
+    left: 10%;
   }
   
   .special_button {
@@ -221,12 +225,4 @@ body {
   h1 {
     position: absolute;
     top: -11%;
-    rotate: 180deg;
-    font-size: 70px;
-  }
-  
-  img {
-    width: 50%;
-    height: 50%;
-    border-radius: 50%;
-  }
+    rotate: 180}
